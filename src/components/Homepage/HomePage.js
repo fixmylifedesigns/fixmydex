@@ -8,10 +8,11 @@ const Home = styled.div`
   background: red;
   /* height:100vh; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content:space-between;
 `;
 const FMLLogo = styled.img`
-  width: 500px;
+  width: 100px;
   margin: 20px auto;
   -webkit-user-select: none;
   -khtml-user-select: none;
