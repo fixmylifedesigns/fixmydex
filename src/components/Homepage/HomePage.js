@@ -8,7 +8,7 @@ const Home = styled.div`
   background: red;
   /* height:100vh; */
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: row;
   justify-content:space-between;
   margin: auto;
 `;
