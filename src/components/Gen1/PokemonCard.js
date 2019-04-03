@@ -34,11 +34,21 @@ const Sprite = styled.img`
   margin: 0;
   width: 130%;
   height: 130%;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 
 const Load = styled.img`
   height: 8%;
   width: 100px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 
 const ErrorMsg = styled.h6`
@@ -53,6 +63,11 @@ const ErrorMsg = styled.h6`
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 
 const LoadingError = styled.div`
@@ -73,17 +88,17 @@ export default class PokemonCard extends Component {
     const { name, url } = this.props;
 
     const pokemonIndex = url.split("/")[url.split("/").length - 2];
-    const newPokemonIndex= pokemonIndex.padStart(3, "0")
+    const newPokemonIndex = pokemonIndex.padStart(3, "0");
 
     const imageUrl = `https://raw.githubusercontent.com/fixmylifedesigns/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
-    const imageCard = `https://pokemon-trainer.com/images/sprite/xyorasani/${newPokemonIndex}.gif`
+    const imageCard = `https://pokemon-trainer.com/images/sprite/xyorasani/${newPokemonIndex}.gif`;
     const pokemonXY = `https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/Pokemon_XY_Sprites/${pokemonIndex}.png`;
 
     this.setState({
       name,
       imageUrl,
       pokemonIndex,
-      imageCard : imageCard,
+      imageCard: imageCard,
       pokemonXY: pokemonXY
     });
   }

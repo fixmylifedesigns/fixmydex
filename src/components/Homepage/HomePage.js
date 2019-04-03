@@ -7,12 +7,17 @@ import fmlLogo from "../Images/fmlpokeball.png";
 const Home = styled.div`
   background: red;
   /* height:100vh; */
-  display:flex;
+  display: flex;
   flex-direction: column;
 `;
 const FMLLogo = styled.img`
   width: 500px;
   margin: 20px auto;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 `;
 export default class HomePage extends Component {
   render() {
