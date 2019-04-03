@@ -13,6 +13,7 @@ const Home = styled.div`
 `;
 const FMLLogo = styled.img`
   width: 100px;
+  height:100px;
   margin: 20px auto;
   -webkit-user-select: none;
   -khtml-user-select: none;
