@@ -10,6 +10,7 @@ const Home = styled.div`
   display: flex;
   /* flex-direction: column; */
   justify-content:space-between;
+  margin: auto;
 `;
 const FMLLogo = styled.img`
   width: 100px;
