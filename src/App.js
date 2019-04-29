@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import HomePage from "./components/Homepage/HomePage";
-import Gen1 from "./components/Gen/Gen1";
-// import PokemonCard as Gen1 from "./components/Gen1/PokemonList"
+import Nav from "./components/nav/Nav";
+import HomePage from "./components/Homepage/Homepage"
+import Gen1 from "./components/generations/Gen1/PokemonList";
+// import Gen2 from "./components/generations/Gen2/PokemonList";
+// import PokemonCard as Gen1 from "./components/generations/Gen1/PokemonList"
+import Pokemon from "./components/Pokemon/Pokemon"
 import styled from "styled-components";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Appication = styled.div`
 background:red;
@@ -15,9 +19,10 @@ class App extends Component {
     return (
       <Router>
       <Appication className="App">
-      <HomePage />
-      <Route exact path="/" Component={HomePage} />
+      <Nav />
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/gen1" component={Gen1} />
+      <Route exact path="/pokemon/:pokemonIndex" component={Pokemon}/>
       </Appication>
       </Router>
     );

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import Loading from "../Images/loading3.gif";
+import Loading from "../../Images/loading3.gif";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 const Card = styled.div`
   background: white;
-  width: 90%;
+  width: 40%;
   padding: 20px;
   height: 150px;
   display: flex;
@@ -20,14 +22,33 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 30px 40px rgba(0, 0, 0, 10), 0 10px 10px rgba(0, 0, 0, 1);
   }
+  @media (max-width: 500px) {
+    width:90%;
+    flex-direction: column;
+    height: 200px;
+  }
 `;
+
+const Header = styled.div`
+display:flex;
+justify-content:space-between;
+width:50%;
+@media (max-width: 500px) {
+width:100%;
+  }
+`
 
 const Name = styled.h2`
   display: none;
+  /* height: 300px; */
 `;
 
 const ImgContainer = styled.div`
   margin-right: 35px;
+  @media (max-width: 500px) {
+margin:auto;
+height:100px;
+}
 `;
 const Sprite = styled.img`
   display: none;
@@ -39,6 +60,9 @@ const Sprite = styled.img`
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+  @media (max-width: 500px) {
+
+  }
 `;
 
 const Load = styled.img`
@@ -74,6 +98,10 @@ const LoadingError = styled.div`
   /* justify-content:flex-end; */
   /* border: solid; */
 `;
+const StyledLink = styled(Link)`
+text-decoration:none;
+color:black;
+`;
 
 export default class PokemonCard extends Component {
   state = {
@@ -104,51 +132,63 @@ export default class PokemonCard extends Component {
   }
 
   render() {
+    // console.log(this.state.name)
     return (
-      <Card>
-        <h1>{this.state.pokemonIndex}</h1>
+      <StyledLink to={`/pokemon/${this.state.pokemonIndex}`}>
+        <Card>
+          <Header>
+            <div>
 
-        <LoadingError>
-          <Name
-            style={
-              this.state.toManyRequest
-                ? { display: "none" }
-                : this.state.imageLoading
-                ? null
-                : { display: "block" }
-            }
-          >
-            {this.state.name
-              .toLowerCase()
-              .split(" ")
-              .map(
-                letter => letter.charAt(0).toUpperCase() + letter.substring(1)
-              )
-              .join(" ")}
-          </Name>
-          {this.state.toManyRequests ? (
-            <ErrorMsg>To Many Request</ErrorMsg>
-          ) : null}
-        </LoadingError>
-        <ImgContainer>
-          <Sprite
-            onLoad={() => this.setState({ imageLoading: false })}
-            onError={() => this.setState({ toManyRequests: true })}
-            src={this.state.imageUrl}
-            alt=""
-            style={
-              this.state.toManyRequest
-                ? { display: "none" }
-                : this.state.imageLoading
-                ? null
-                : { display: "block" }
-            }
-          />
+            
+          <h1>{this.state.pokemonIndex}</h1>
+          </div>
+{/* ******************name ****************** */}
           <LoadingError>
-            {this.state.imageLoading ? <Load src={Loading} /> : null}
+            <Name
+              style={
+                this.state.toManyRequest
+                  ? { display: "none" }
+                  : this.state.imageLoading
+                  ? null
+                  : { display: "block" }
+              }
+            >
+              {this.state.name
+                .toLowerCase()
+                .split(" ")
+                .map(
+                  letter => letter.charAt(0).toUpperCase() + letter.substring(1)
+                )
+                .join(" ")}
+            </Name>
+            {this.state.toManyRequests ? (
+              <ErrorMsg>To Many Request</ErrorMsg>
+            ) : null}
           </LoadingError>
-        </ImgContainer>
-      </Card>
+
+          </Header>
+
+          <ImgContainer>
+            <Sprite
+              onLoad={() => this.setState({ imageLoading: false })}
+              onError={() => this.setState({ toManyRequests: true })}
+              src={this.state.imageUrl}
+              alt=""
+              style={
+                this.state.toManyRequest
+                  ? { display: "none" }
+                  : this.state.imageLoading
+                  ? null
+                  : { display: "block" }
+              }
+            />
+            <LoadingError>
+              {this.state.imageLoading ? <Load src={Loading} /> : null}
+            </LoadingError>
+          </ImgContainer>
+
+        </Card>
+      </StyledLink>
     );
   }
 }
