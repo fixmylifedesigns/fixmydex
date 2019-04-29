@@ -276,7 +276,7 @@ class Pokemon extends Component {
         </HeaderDiv>
         <ImageTypeDesDiv>
           <ImageTypesContainer>
-            <Image src={this.state.imageUrl} alt="" />
+            <Image src={this.state.pokemonimg} alt="" />
             <TypeContainer>
               {this.state.types.map(type => (
                 <Type
