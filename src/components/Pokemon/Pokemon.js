@@ -143,7 +143,7 @@ class Pokemon extends Component {
     const imageUrl = `https://raw.githubusercontent.com/fixmylifedesigns/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
     const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
     const pokemonimg = `https://pokemon-trainer.com/images/sprite/xyorasani/${newPokemonIndex}.gif`;
-    const pokemonSpeciesUrl = `http://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}`;
+    const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}`;
 
     const pokemonRes = await axios.get(pokemonUrl);
     const name = pokemonRes.data.name;
@@ -276,7 +276,7 @@ class Pokemon extends Component {
         </HeaderDiv>
         <ImageTypeDesDiv>
           <ImageTypesContainer>
-            <Image src={this.state.imageUrl} alt="" />
+            <Image src={this.state.pokemonimg} alt="" />
             <TypeContainer>
               {this.state.types.map(type => (
                 <Type
