@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import PokemonCard from "./PokemonCard";
+import PokemonCard from "../Pokemon/PokemonCard";
 import axios from "axios";
 
 export default class PokemonList extends Component {
   state = {
-    url: "https://raw.githubusercontent.com/fixmylifedesigns/Pokeapi/master/Generation1.json",
+    url: "https://raw.githubusercontent.com/fixmylifedesigns/Pokeapi/master/Generation7.json",
     pokemon: null
   };
 

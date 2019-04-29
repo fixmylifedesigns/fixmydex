@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Loading from "../../Images/loading3.gif";
+import Loading from "../Images/loading3.gif";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
