@@ -257,8 +257,8 @@ class Pokemon extends Component {
     });
   }
 
-  render(props) {
-    // console.log(this.state.pokemonimg);
+  render() {
+    console.log(this.state);
     return (
       <ContainerDiv>
         <HeaderDiv>
