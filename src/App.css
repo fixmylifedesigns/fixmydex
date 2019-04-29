@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   background:red;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 @keyframes App-logo-spin {
