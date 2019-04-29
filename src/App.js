@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Nav from "./components/nav/Nav";
-import Homepage from "./components/Homepage/Homepage"
+import Home from "./components/Home/Home"
 import Gen1 from "./components/generations/Gen1";
 import Gen2 from "./components/generations/Gen2";
 import Gen3 from "./components/generations/Gen3";
@@ -25,7 +25,7 @@ class App extends Component {
       <Router>
       <Appication className="App">
       <Nav />
-      <Route exact path="/" component={Homepage} />
+      <Route exact path="/" component={Home} />
       <Route exact path="/gen1" component={Gen1} />
       <Route exact path="/gen2" component={Gen2} />
       <Route exact path="/gen3" component={Gen3} />

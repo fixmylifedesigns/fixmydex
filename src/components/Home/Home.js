@@ -14,7 +14,7 @@ margin:2px auto;
 width:100px;
 `
 
-export default class Homepage extends Component {
+export default class Home extends Component {
   render() {
     //   console.log("hello")
     return (
