@@ -141,7 +141,7 @@ class Pokemon extends Component {
     // const pokemonIndex = pokemonIndex.split("/")[pokemonIndex.split("/").length - 2];
     const newPokemonIndex = pokemonIndex.padStart(3, "0");
     const imageUrl = `https://raw.githubusercontent.com/fixmylifedesigns/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
-    const pokemonUrl = `http://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
+    const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}`;
     const pokemonimg = `https://pokemon-trainer.com/images/sprite/xyorasani/${newPokemonIndex}.gif`;
     const pokemonSpeciesUrl = `http://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}`;
 
