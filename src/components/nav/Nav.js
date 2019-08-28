@@ -31,6 +31,7 @@ export default class Nav extends Component {
             {/* <button>Home</button> */}
               <FMLLogo src={fmlLogo} alt="" />
           </Link>
+          
         </Switch>
       
       </Home>

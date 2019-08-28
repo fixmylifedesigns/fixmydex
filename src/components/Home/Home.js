@@ -6,74 +6,63 @@ import Button from "@material-ui/core/Button";
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  flex-wrap: wrap;
+
+  height: 50%;
+
+`;
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const LinkStyled = styled(Link)`
+  margin: 2px auto;
+  width: 100px;
 `;
 
-const LinkStyled = styled(Link)`
-margin:2px auto;
-width:100px;
-`
-
 export default class Home extends Component {
+  GenerationsRowOne = [
+    { link: "/gen1", title: "Generation I" },
+    { link: "/gen2", title: "Generation II" },
+    { link: "/gen3", title: "Generation III" },
+    { link: "/gen4", title: "Generation IV" }
+  ];
+
+  GenerationsRowTwo = [
+    { link: "/gen5", title: "Generation V" },
+    { link: "/gen6", title: "Generation VI" },
+    { link: "/gen7", title: "Generation VII" }
+  ];
+
   render() {
-    //   console.log("hello")
     return (
       <HomeContainer>
-        <Switch>
-          <LinkStyled exact to="/gen1">
-            <Button variant="contained" color="primary">
-              Generation I
-            </Button>
-          </LinkStyled>
-        </Switch>
-
-        <Switch>
-          <LinkStyled exact to="/gen2">
-            <Button variant="contained" color="primary">
-              Generation II
-            </Button>
-          </LinkStyled>
-        </Switch>
-
-        <Switch>
-          <LinkStyled exact to="/gen3">
-            <Button variant="contained" color="primary">
-              Generation III
-            </Button>
-          </LinkStyled>
-        </Switch>
-        <Switch>
-          <LinkStyled exact to="/gen4">
-            <Button variant="contained" color="primary">
-              Generation IV
-            </Button>
-          </LinkStyled>
-        </Switch>
-
-        <Switch>
-          <LinkStyled exact to="/gen5">
-            <Button variant="contained" color="primary">
-              Generation V
-            </Button>
-          </LinkStyled>
-        </Switch>
-
-        <Switch>
-          <LinkStyled exact to="/gen6">
-            <Button variant="contained" color="primary">
-              Generation VI
-            </Button>
-          </LinkStyled>
-        </Switch>
-
-        <Switch>
-          <LinkStyled exact to="/gen7">
-            <Button variant="contained" color="primary">
-              Generation VII
-            </Button>
-          </LinkStyled>
-        </Switch>
-
+        <CardContainer>
+          {this.GenerationsRowOne.map(gen => {
+            return (
+              <Switch>
+                <LinkStyled exact to={gen.link}>
+                  <Button variant="contained" color="primary">
+                    {gen.title}
+                  </Button>
+                </LinkStyled>
+              </Switch>
+            );
+          })}{" "}
+        </CardContainer>
+        <CardContainer>
+          {this.GenerationsRowTwo.map(gen => {
+            return (
+              <Switch>
+                <LinkStyled exact to={gen.link}>
+                  <Button variant="contained" color="primary">
+                    {gen.title}
+                  </Button>
+                </LinkStyled>
+              </Switch>
+            );
+          })}
+        </CardContainer>
       </HomeContainer>
     );
   }
